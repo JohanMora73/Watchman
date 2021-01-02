@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>recursos/Pepinillo Rick.png</file>
+        <file>recursos/Sprit Rick.png</file>
+    </qresource>
+</RCC>
