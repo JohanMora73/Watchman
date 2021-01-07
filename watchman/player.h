@@ -7,6 +7,8 @@
 #include <QMediaPlayer>
 #include <QTimer>
 #include <QPainter>
+#include "enemy.h"
+#include "poder.h"
 
 class Player: public QObject, public QGraphicsPixmapItem
 {
@@ -27,7 +29,7 @@ public:
 
 signals:
 public slots: //Funciones que trabaja por si sola sin necesidad de yo estarla llamando
-    //void Actualizacion();
+    //void spawn();
 
 };
 #endif // PLAYER_H

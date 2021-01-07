@@ -1,6 +1,7 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QTimer>
 #include "game.h"
 #include "player.h"
 

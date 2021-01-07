@@ -13,12 +13,14 @@ SOURCES += \
     enemy.cpp \
     game.cpp \
     main.cpp \
-    player.cpp
+    player.cpp \
+    poder.cpp
 
 HEADERS += \
     enemy.h \
     game.h \
-    player.h
+    player.h \
+    poder.h
 
 FORMS +=
 
@@ -29,3 +31,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     recursos.qrc
+

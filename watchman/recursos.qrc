@@ -1,6 +1,10 @@
 <RCC>
     <qresource prefix="/">
-        <file>recursos/Pepinillo Rick.png</file>
-        <file>recursos/Sprit Rick.png</file>
+        <file>recursos/imagenes/Pepinillo Rick.png</file>
+        <file>recursos/imagenes/Sprit Rick.png</file>
+        <file>recursos/sonidos/y2mate.com - Hombres Lunares  Goodbye moonmen EXTENDED By Angel Balam  Leisha Medina.mp3</file>
+        <file>recursos/sonidos/y2mate.com - Pepinillo Rick Pickle RIck Doblaje no Oficial Español Latino.mp3</file>
+        <file>recursos/sonidos/y2matecom-pepinillo-rick-pickle-rick-doblaje-no-oficial-espanol-latino_dBIW7Ztv.mp3</file>
+        <file>recursos/imagenes/poder.png</file>
     </qresource>
 </RCC>

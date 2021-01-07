@@ -1,11 +1,14 @@
 #include "player.h"
+#include "game.h"
+
+extern Game * juego;
 
 Player::Player(QGraphicsItem *parent)
 {
     timer = new QTimer();
-    fila = 770;
+    fila = 5;
     columna =5;
-    pixmap = new QPixmap(":/recursos/Sprit Rick.png");
+    pixmap = new QPixmap(":/recursos/imagenes/Sprit Rick.png");
     setScale(0.5);
     //dimensiones de cada imagen
     ancho=125;
@@ -52,6 +55,13 @@ void Player::keyPressEvent(QKeyEvent *event)
             Movimiento();
             fila=172;
         }
+    }
+
+    else if(event->key()==Qt::Key_Space){
+        Poder *power =new Poder(fila);
+        power->setPos(x()-20,y());
+        scene()->addItem(power);
+
     }
 }
 
