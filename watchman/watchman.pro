@@ -13,12 +13,14 @@ SOURCES += \
     enemy.cpp \
     game.cpp \
     main.cpp \
+    nave.cpp \
     player.cpp \
     poder.cpp
 
 HEADERS += \
     enemy.h \
     game.h \
+    nave.h \
     player.h \
     poder.h
 

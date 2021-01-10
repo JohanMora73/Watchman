@@ -7,6 +7,7 @@
 #include <QMediaPlayer>
 #include <QTimer>
 #include <QPainter>
+#include <QDebug>
 #include "enemy.h"
 #include "poder.h"
 

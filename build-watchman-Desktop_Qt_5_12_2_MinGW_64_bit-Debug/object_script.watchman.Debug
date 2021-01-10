@@ -1,10 +1,12 @@
 debug/enemy.o
 debug/game.o
 debug/main.o
+debug/nave.o
 debug/player.o
 debug/poder.o
 debug/qrc_recursos.o
 debug/moc_enemy.o
 debug/moc_game.o
+debug/moc_nave.o
 debug/moc_player.o
 debug/moc_poder.o

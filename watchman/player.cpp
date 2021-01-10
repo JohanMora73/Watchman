@@ -13,7 +13,6 @@ Player::Player(QGraphicsItem *parent)
     //dimensiones de cada imagen
     ancho=125;
     alto=160;
-
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
@@ -34,7 +33,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
 
     else if(event->key()==Qt::Key_Right){
-        if(pos().x() + 50 < 700){
+        if(pos().x() + 50 < 2000){
             setPos(x()+10,y());
             Movimiento();
             fila=5;
@@ -50,7 +49,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
 
     else if(event->key()==Qt::Key_Down){
-        if(pos().y()+50 < 600){
+        if(pos().y()+50 < 1200){
             setPos(x(),y()+10);
             Movimiento();
             fila=172;

@@ -16,17 +16,25 @@ class Enemy: public QObject, public QGraphicsItem
 public slots:
 
     void desplazamiento();
+    void Restar_Vida();
+    void Retroceso();
+    void CaidaLibre();
 
 public:
-    Enemy(QGraphicsItem * parent = 0);
+    Enemy(int posx_,int posy_);
 
     QPixmap *pixmap;
     QTimer *TimerDesp;
 
+    QTimer *TimerLife;
+
+    QTimer *TimerRetro;
+
+    QTimer *TimerCaida;
+
     float fila,columna;
     float ancho,alto;
-
-    int posx=50,posy=50;
+    float escala;
 
     int getPosx() const;
     void setPosx(int px);
@@ -40,8 +48,29 @@ public:
 
     void Movimiento();
     void Rebotar(int op);
+    void Retroceso(int op);
 
-    int life=3;
+    int posx;
+    int posy;
+    int life=10;
+    int masa;
+    int vx;
+    int vy;
+    int ax;
+    int ay;
+    float dt;
+    float g;
+    float k;
+    float e;
+    float vt;
+    int angulo;
+    bool retroceder;
+
+    int VY;
+
+    //float prov;
+    int dir;
+    int caer;
 
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
