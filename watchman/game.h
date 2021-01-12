@@ -17,6 +17,8 @@
 #include "player.h"
 #include "enemy.h"
 #include "nave.h"
+#include "vida.h"
+#include "puntaje.h"
 
 class Game: public QGraphicsView
 {
@@ -28,7 +30,9 @@ public:
     QMediaPlayer * AudioInvasores;// = new QMediaPlayer;
 
     Player * jugador;
-    Nave *nave;
+    Nave * nave;
+    Vida * Health;
+    Puntaje * score;
 
     int aux;
 

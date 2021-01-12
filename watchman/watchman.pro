@@ -15,14 +15,18 @@ SOURCES += \
     main.cpp \
     nave.cpp \
     player.cpp \
-    poder.cpp
+    poder.cpp \
+    puntaje.cpp \
+    vida.cpp
 
 HEADERS += \
     enemy.h \
     game.h \
     nave.h \
     player.h \
-    poder.h
+    poder.h \
+    puntaje.h \
+    vida.h
 
 FORMS +=
 

@@ -19,6 +19,7 @@ public slots:
     void Restar_Vida();
     void Retroceso();
     void CaidaLibre();
+    void Rest_Vida_Player();
 
 public:
     Enemy(int posx_,int posy_);
@@ -27,6 +28,8 @@ public:
     QTimer *TimerDesp;
 
     QTimer *TimerLife;
+
+    QTimer *health_player;
 
     QTimer *TimerRetro;
 
@@ -52,7 +55,7 @@ public:
 
     int posx;
     int posy;
-    int life=10;
+    int life=5;
     int masa;
     int vx;
     int vy;
@@ -64,9 +67,10 @@ public:
     float e;
     float vt;
     int angulo;
-    bool retroceder;
+    int retroceder;
 
     int VY;
+    float t;
 
     //float prov;
     int dir;

@@ -4,9 +4,13 @@ debug/main.o
 debug/nave.o
 debug/player.o
 debug/poder.o
+debug/puntaje.o
+debug/vida.o
 debug/qrc_recursos.o
 debug/moc_enemy.o
 debug/moc_game.o
 debug/moc_nave.o
 debug/moc_player.o
 debug/moc_poder.o
+debug/moc_puntaje.o
+debug/moc_vida.o
