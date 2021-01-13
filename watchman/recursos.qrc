@@ -8,5 +8,6 @@
         <file>recursos/imagenes/poder.png</file>
         <file>recursos/imagenes/escenario2.png</file>
         <file>recursos/imagenes/nave.png</file>
+        <file>recursos/imagenes/nivel1.png</file>
     </qresource>
 </RCC>

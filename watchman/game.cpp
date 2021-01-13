@@ -9,7 +9,7 @@ Game::Game(QWidget *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/escenario2.png")));
+    setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/nivel1.png")));
 
     setFixedSize(1350,700);
 

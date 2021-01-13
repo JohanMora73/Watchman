@@ -1,6 +1,7 @@
 release/enemy.o
 release/game.o
 release/main.o
+release/mainwindow.o
 release/nave.o
 release/player.o
 release/poder.o
@@ -9,6 +10,7 @@ release/vida.o
 release/qrc_recursos.o
 release/moc_enemy.o
 release/moc_game.o
+release/moc_mainwindow.o
 release/moc_nave.o
 release/moc_player.o
 release/moc_poder.o

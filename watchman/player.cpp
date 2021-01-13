@@ -60,6 +60,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         scene()->addItem(power);
 
     }
+    qDebug() << "paso";
 }
 
 void Player::Movimiento()
