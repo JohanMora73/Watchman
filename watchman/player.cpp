@@ -60,7 +60,46 @@ void Player::keyPressEvent(QKeyEvent *event)
         scene()->addItem(power);
 
     }
-    qDebug() << "paso";
+    if(juego->caso==2){
+        if(event->key()==Qt::Key_J){
+            if(juego->jugador2->pos().x() > 0){
+                juego->jugador2->setPos(juego->jugador2->x()-10,juego->jugador2->y());
+                juego->jugador2->Movimiento();
+                juego->jugador2->fila=340;
+            }
+        }
+
+        else if(event->key()==Qt::Key_L){
+            if(juego->jugador2->pos().x() + 50 < 2000){
+                juego->jugador2->setPos(juego->jugador2->x()+10,juego->jugador2->y());
+                juego->jugador2->Movimiento();
+                juego->jugador2->fila=5;
+            }
+        }
+
+        else if(event->key()==Qt::Key_I){
+            if(juego->jugador2->pos().y()>0){
+                juego->jugador2->setPos(juego->jugador2->x(),juego->jugador2->y()-10);
+                juego->jugador2->Movimiento();
+                juego->jugador2->fila=505;
+            }
+        }
+
+        else if(event->key()==Qt::Key_K){
+            if(juego->jugador2->pos().y()+50 < 1200){
+                juego->jugador2->setPos(juego->jugador2->x(),juego->jugador2->y()+10);
+                juego->jugador2->Movimiento();
+                juego->jugador2->fila=172;
+            }
+        }
+
+        else if(event->key()==Qt::Key_H){
+            Poder *power =new Poder(fila);
+            power->setPos(juego->jugador2->x()-20,juego->jugador2->y());
+            scene()->addItem(power);
+        }
+
+    }
 }
 
 void Player::Movimiento()

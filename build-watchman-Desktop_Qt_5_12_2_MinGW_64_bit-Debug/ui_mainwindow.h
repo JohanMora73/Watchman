@@ -41,6 +41,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLabel *label_7;
+    QPushButton *pushButton_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -59,7 +60,7 @@ public:
         graphicsView->setMinimumSize(QSize(800, 600));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(220, 240, 151, 61));
+        pushButton_3->setGeometry(QRect(550, 80, 101, 31));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(50, 40, 171, 51));
@@ -124,6 +125,9 @@ public:
         label_7 = new QLabel(centralwidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(350, 90, 101, 31));
+        pushButton_4 = new QPushButton(centralwidget);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setGeometry(QRect(550, 120, 101, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -141,7 +145,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Iniciar", nullptr));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Invitado", nullptr));
         label->setText(QApplication::translate("MainWindow", "Iniciar seccion", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Usuario:", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Clave:", nullptr));
@@ -151,6 +155,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Ingresar", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "Registrarse", nullptr));
         label_7->setText(QString());
+        pushButton_4->setText(QApplication::translate("MainWindow", "Multijugador", nullptr));
     } // retranslateUi
 
 };

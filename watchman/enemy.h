@@ -20,6 +20,7 @@ public slots:
     void Retroceso();
     void CaidaLibre();
     void Rest_Vida_Player();
+    void PausarEnemigos();
 
 public:
     Enemy(int posx_,int posy_);

@@ -29,7 +29,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_3_clicked();
+    void on_pushButton_3_clicked(); //Un solo jugador
+
+    void on_pushButton_4_clicked(); //Multijugador
 
 private:
     Ui::MainWindow *ui;

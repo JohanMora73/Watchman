@@ -15,7 +15,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     nave.cpp \
+    perder.cpp \
     player.cpp \
+    player2.cpp \
     poder.cpp \
     puntaje.cpp \
     vida.cpp
@@ -25,13 +27,16 @@ HEADERS += \
     game.h \
     mainwindow.h \
     nave.h \
+    perder.h \
     player.h \
+    player2.h \
     poder.h \
     puntaje.h \
     vida.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    perder.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

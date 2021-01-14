@@ -3,7 +3,9 @@ release/game.o
 release/main.o
 release/mainwindow.o
 release/nave.o
+release/perder.o
 release/player.o
+release/player2.o
 release/poder.o
 release/puntaje.o
 release/vida.o
@@ -12,7 +14,9 @@ release/moc_enemy.o
 release/moc_game.o
 release/moc_mainwindow.o
 release/moc_nave.o
+release/moc_perder.o
 release/moc_player.o
+release/moc_player2.o
 release/moc_poder.o
 release/moc_puntaje.o
 release/moc_vida.o

@@ -15,17 +15,20 @@
 #include <QObject>
 #include <QBrush>
 #include "player.h"
+#include "player2.h"
 #include "enemy.h"
 #include "nave.h"
 #include "vida.h"
 #include "puntaje.h"
+#include "perder.h"
+
 
 class Game: public QGraphicsView
 {
     Q_OBJECT
 public:
 
-    Game(QWidget * parent = nullptr);
+    Game(int caso_,QWidget * parent = nullptr);
     QGraphicsScene * scene;
     QMediaPlayer * AudioInvasores;// = new QMediaPlayer;
 
@@ -33,8 +36,15 @@ public:
     Nave * nave;
     Vida * Health;
     Puntaje * score;
+    Perder * lose;
+    Player2 * jugador2;
+
+    bool perdio = false;
 
     int aux;
+    int caso;
+
+    void perderElJuego();
 
 public slots:
     //void MoveEnemy();

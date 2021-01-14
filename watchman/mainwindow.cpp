@@ -18,6 +18,13 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_3_clicked()
 {
     this->hide();
-    juego = new Game();
+    juego = new Game(1);
+    juego->show();
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    this->hide();
+    juego = new Game(2);
     juego->show();
 }

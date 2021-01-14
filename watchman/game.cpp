@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(QWidget *parent)
+Game::Game(int caso_, QWidget *parent)
 {
     aux=1;
     scene = new QGraphicsScene();
@@ -17,11 +17,19 @@ Game::Game(QWidget *parent)
 
     //setForegroundBrush(QBrush(QImage(":/recursos/imagenes/fore2.png")));
 
+    caso = caso_;
+
     jugador = new Player();
     jugador->setPos(340,280);
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);
     jugador->setFocus();
     scene->addItem(jugador);
+
+    if(caso==2){
+        jugador2 = new Player2();
+        jugador2->setPos(380,280);
+        scene->addItem(jugador2);
+    }
 
     Health = new Vida();
     Health->setPos(1200,20);
@@ -41,6 +49,20 @@ Game::Game(QWidget *parent)
 
     AudioInvasores = new QMediaPlayer();
     AudioInvasores->setMedia(QUrl("qrc:/recursos/sonidos/y2matecom-pepinillo-rick-pickle-rick-doblaje-no-oficial-espanol-latino_dBIW7Ztv.mp3"));
+
+}
+
+void Game::perderElJuego()
+{
+    lose = new Perder();
+    lose->show();
+    scene->removeItem(jugador);
+    delete jugador;
+    nave->TimerMove->stop();
+    Time_Enemy->stop();
+    perdio=true;
+    delete scene;
+
 
 }
 

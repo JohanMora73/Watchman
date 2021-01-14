@@ -28,6 +28,7 @@ Enemy::Enemy(int posx_, int posy_)
 
     t=0;
 
+
     pixmap = new QPixmap(":/recursos/imagenes/Pepinillo Rick.png");
     setScale(0.5);
     //dimensiones de cada imagen
@@ -199,8 +200,11 @@ void Enemy::CaidaLibre()
 void Enemy::Rest_Vida_Player()
 {
     if(sqrt(pow(posx-juego->jugador->x(),2)+pow(posy-juego->jugador->y(),2))<=7){
-        qDebug () << " -1 " ;
-        juego->Health->decrease();
+        //qDebug () << " -1 " ;
+        //juego->Health->decrease();
+        if(juego->Health->getHealth()==0){
+            juego->perderElJuego();
+        }
         if(fila==5){
             juego->jugador->setPos(juego->jugador->x()+30,juego->jugador->y());
         }
@@ -213,57 +217,75 @@ void Enemy::Rest_Vida_Player()
         if(fila==508){
             juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()-30);
         }
+
     }
+}
+
+void Enemy::PausarEnemigos()
+{
+    scene()->removeItem(this);
+    delete this;
+    //TimerCaida->stop();
+    //TimerRetro->stop();
+    //TimerDesp->stop();
+    //TimerLife->stop();
+    //health_player->stop();
+
 }
 
 void Enemy::desplazamiento()
 {
-    if (caer==0)
-    {
-        if(x()<juego->jugador->x()){
-            if(dir==0) {dir=1;}
-            right();
+    if(juego->perdio==true){
+        PausarEnemigos();
+    }
+    else{
+        if (caer==0)
+        {
+            if(x()<juego->jugador->x()){
+                if(dir==0) {dir=1;}
+                right();
 
-            QList<QGraphicsItem * >collinding_Items = collidingItems();
-            for(int i = 0; i < collinding_Items.size();i++){
-                if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                    Rebotar(1);
+                QList<QGraphicsItem * >collinding_Items = collidingItems();
+                for(int i = 0; i < collinding_Items.size();i++){
+                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
+                        Rebotar(1);
 
+                    }
                 }
             }
-        }
-        else if(x()>juego->jugador->x()){
-            if(dir==0) {dir=2;}
-            left();
-            QList<QGraphicsItem * >collinding_Items = collidingItems();
-            for(int i = 0; i < collinding_Items.size();i++){
-                if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                    Rebotar(2);
+            else if(x()>juego->jugador->x()){
+                if(dir==0) {dir=2;}
+                left();
+                QList<QGraphicsItem * >collinding_Items = collidingItems();
+                for(int i = 0; i < collinding_Items.size();i++){
+                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
+                        Rebotar(2);
+                    }
                 }
             }
-        }
-        if(y()<juego->jugador->y()){
-            if(dir==0) {dir=3;}
-            down();
-            QList<QGraphicsItem * >collinding_Items = collidingItems();
-            for(int i = 0; i < collinding_Items.size();i++){
-                if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                    Rebotar(3);
+            if(y()<juego->jugador->y()){
+                if(dir==0) {dir=3;}
+                down();
+                QList<QGraphicsItem * >collinding_Items = collidingItems();
+                for(int i = 0; i < collinding_Items.size();i++){
+                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
+                        Rebotar(3);
+                    }
                 }
             }
-        }
-        else if(y()>juego->jugador->y()){
-            if(dir==0) {dir=4;}
-            up();
-            QList<QGraphicsItem * >collinding_Items = collidingItems();
-            for(int i = 0; i < collinding_Items.size();i++){
-                if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                    Rebotar(4);
+            else if(y()>juego->jugador->y()){
+                if(dir==0) {dir=4;}
+                up();
+                QList<QGraphicsItem * >collinding_Items = collidingItems();
+                for(int i = 0; i < collinding_Items.size();i++){
+                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
+                        Rebotar(4);
+                    }
                 }
             }
-        }
 
-        Movimiento();
+            Movimiento();
+        }
     }
 }
 
