@@ -14,6 +14,7 @@ Game::Game(int caso_, QWidget *parent)
     setFixedSize(1350,700);
 
     show();
+    alternar=0;
 
     //setForegroundBrush(QBrush(QImage(":/recursos/imagenes/fore2.png")));
 
@@ -25,10 +26,15 @@ Game::Game(int caso_, QWidget *parent)
     jugador->setFocus();
     scene->addItem(jugador);
 
+    //multijugador
     if(caso==2){
         jugador2 = new Player2();
         jugador2->setPos(380,280);
         scene->addItem(jugador2);
+
+        Health2=new Vida();
+        Health2->setPos(140,20);
+        scene->addItem(Health2);
     }
 
     Health = new Vida();
@@ -58,6 +64,7 @@ void Game::perderElJuego()
     lose->show();
     scene->removeItem(jugador);
     delete jugador;
+    delete jugador2;
     nave->TimerMove->stop();
     Time_Enemy->stop();
     perdio=true;
@@ -66,11 +73,28 @@ void Game::perderElJuego()
 
 }
 
+void Game::JugadorGanador(int player_)
+{
+    winner = new Ganador(player_);
+    winner->show();
+    scene->removeItem(jugador);
+    scene->removeItem(jugador2);
+    delete jugador;
+    delete jugador2;
+    nave->TimerMove->stop();
+    Time_Enemy->stop();
+    perdio=true;
+    delete scene;
+
+}
+
 void Game::spawn()
 {
     //if(aux==1){
-    Enemy * enemigo = new Enemy(nave->posx+30,nave->posy+100);
+
+    Enemy * enemigo = new Enemy(nave->posx+30,nave->posy+100,alternar);
     scene->addItem(enemigo);  
+    if(caso==2) alternar+=1;
     //AudioInvasores->play();
     //aux+=1;
     //}

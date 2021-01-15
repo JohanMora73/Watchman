@@ -94,7 +94,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
 
         else if(event->key()==Qt::Key_H){
-            Poder *power =new Poder(fila);
+            Poder *power =new Poder(juego->jugador2->fila);
             power->setPos(juego->jugador2->x()-20,juego->jugador2->y());
             scene()->addItem(power);
         }
@@ -111,19 +111,6 @@ void Player::Movimiento()
     this->update(-ancho/2,-alto/2,ancho,alto);
 
 }
-/*
-void Player::Restar_Vida()
-{
-    //qDebug() << "shit";
-    QList<QGraphicsItem * >collinding_Items = collidingItems();
-    for(int i = 0; i < collinding_Items.size();i++){
-        if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-            qDebug() <<-1;
-        }
-    }
-}
-
-*/
 
 QRectF Player::boundingRect() const
 {

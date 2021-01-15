@@ -1,13 +1,15 @@
-#include "enemy.h"
+﻿#include "enemy.h"
 #include "game.h"
 #include "player.h"
 
 extern Game * juego;
 
-Enemy::Enemy(int posx_, int posy_)
+Enemy::Enemy(int posx_, int posy_, int alternate_)
 {
     fila = 175;
     columna =5;
+
+    alternate=alternate_;
 
     posx=posx_;
     posy=posy_;
@@ -134,6 +136,18 @@ void Enemy::Rebotar(int op)
     }
 }
 
+int Enemy::Colision_enemy()
+{
+    int resp=0;
+    QList<QGraphicsItem * >collinding_Items = collidingItems();
+    for(int i = 0; i < collinding_Items.size();i++){
+        if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
+           resp=1;
+        }
+    }
+    return resp;
+}
+
 void Enemy::Retroceso()
 {
     if(retroceder==1 && dt<=4){
@@ -199,25 +213,53 @@ void Enemy::CaidaLibre()
 
 void Enemy::Rest_Vida_Player()
 {
-    if(sqrt(pow(posx-juego->jugador->x(),2)+pow(posy-juego->jugador->y(),2))<=7){
-        //qDebug () << " -1 " ;
-        //juego->Health->decrease();
-        if(juego->Health->getHealth()==0){
-            juego->perderElJuego();
-        }
-        if(fila==5){
-            juego->jugador->setPos(juego->jugador->x()+30,juego->jugador->y());
-        }
-        if(fila==340){
-            juego->jugador->setPos(juego->jugador->x()-30,juego->jugador->y());
-        }
-        if(fila==175){
-            juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()+30);
-        }
-        if(fila==508){
-            juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()-30);
-        }
+    if(alternate%2==0)
+    {
+        if(sqrt(pow(posx-juego->jugador->x(),2)+pow(posy-juego->jugador->y(),2))<=7){
+            //qDebug () << " -1 " ;
+            juego->Health->decrease();
+            if(juego->Health->getHealth()==0){
+                if(juego->caso==2) {juego->JugadorGanador(2);}
+                else {juego->perderElJuego();}
+                //juego->perderElJuego();
+            }
+            if(fila==5){
+                juego->jugador->setPos(juego->jugador->x()+30,juego->jugador->y());
+            }
+            if(fila==340){
+                juego->jugador->setPos(juego->jugador->x()-30,juego->jugador->y());
+            }
+            if(fila==175){
+                juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()+30);
+            }
+            if(fila==508){
+                juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()-30);
+            }
 
+        }
+    }
+    else
+    {
+        if(sqrt(pow(posx-juego->jugador2->x(),2)+pow(posy-juego->jugador2->y(),2))<=7){
+            //qDebug () << " -1 " ;
+            juego->Health2->decrease();
+            if(juego->Health2->getHealth()==0){
+                juego->JugadorGanador(1);
+            }
+            if(fila==5){
+                juego->jugador2->setPos(juego->jugador2->x()+30,juego->jugador2->y());
+            }
+            if(fila==340){
+                juego->jugador2->setPos(juego->jugador2->x()-30,juego->jugador2->y());
+            }
+            if(fila==175){
+                juego->jugador2->setPos(juego->jugador2->x(),juego->jugador2->y()+30);
+            }
+            if(fila==508){
+                juego->jugador2->setPos(juego->jugador2->x(),juego->jugador2->y()-30);
+            }
+
+        }
     }
 }
 
@@ -241,46 +283,64 @@ void Enemy::desplazamiento()
     else{
         if (caer==0)
         {
-            if(x()<juego->jugador->x()){
-                if(dir==0) {dir=1;}
-                right();
+            if(alternate % 2 == 0)
+            {
+                if(x()<juego->jugador->x()){
+                    if(dir==0) {dir=1;}
+                    right();
+                    int resp = Colision_enemy();
+                    if(resp==1)Rebotar(1);
 
-                QList<QGraphicsItem * >collinding_Items = collidingItems();
-                for(int i = 0; i < collinding_Items.size();i++){
-                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                        Rebotar(1);
+                }
+                else if(x()>juego->jugador->x()){
+                    if(dir==0) {dir=2;}
+                    left();
+                    int resp= Colision_enemy();
+                    if(resp==1)Rebotar(2);
 
-                    }
+                }
+                if(y()<juego->jugador->y()){
+                    if(dir==0) {dir=3;}
+                    down();
+                    int resp= Colision_enemy();
+                    if(resp==1)Rebotar(3);
+                }
+
+                else if(y()>juego->jugador->y()){
+                    if(dir==0) {dir=4;}
+                    up();
+                    int resp= Colision_enemy();
+                    if(resp==1)Rebotar(4);
                 }
             }
-            else if(x()>juego->jugador->x()){
-                if(dir==0) {dir=2;}
-                left();
-                QList<QGraphicsItem * >collinding_Items = collidingItems();
-                for(int i = 0; i < collinding_Items.size();i++){
-                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                        Rebotar(2);
-                    }
+            else
+            {
+                if(x()<juego->jugador2->x()){
+                    if(dir==0) {dir=1;}
+                    right();
+                    int resp = Colision_enemy();
+                    if(resp==1)Rebotar(1);
+
                 }
-            }
-            if(y()<juego->jugador->y()){
-                if(dir==0) {dir=3;}
-                down();
-                QList<QGraphicsItem * >collinding_Items = collidingItems();
-                for(int i = 0; i < collinding_Items.size();i++){
-                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                        Rebotar(3);
-                    }
+                else if(x()>juego->jugador2->x()){
+                    if(dir==0) {dir=2;}
+                    left();
+                    int resp= Colision_enemy();
+                    if(resp==1)Rebotar(2);
+
                 }
-            }
-            else if(y()>juego->jugador->y()){
-                if(dir==0) {dir=4;}
-                up();
-                QList<QGraphicsItem * >collinding_Items = collidingItems();
-                for(int i = 0; i < collinding_Items.size();i++){
-                    if(typeid (*(collinding_Items[i]))==typeid (Enemy)){
-                        Rebotar(4);
-                    }
+                if(y()<juego->jugador2->y()){
+                    if(dir==0) {dir=3;}
+                    down();
+                    int resp= Colision_enemy();
+                    if(resp==1)Rebotar(3);
+                }
+
+                else if(y()>juego->jugador2->y()){
+                    if(dir==0) {dir=4;}
+                    up();
+                    int resp= Colision_enemy();
+                    if(resp==1)Rebotar(4);
                 }
             }
 

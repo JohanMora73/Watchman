@@ -21,6 +21,7 @@
 #include "vida.h"
 #include "puntaje.h"
 #include "perder.h"
+#include "ganador.h"
 
 
 class Game: public QGraphicsView
@@ -35,16 +36,20 @@ public:
     Player * jugador;
     Nave * nave;
     Vida * Health;
+    Vida * Health2;
     Puntaje * score;
     Perder * lose;
     Player2 * jugador2;
+    Ganador * winner;
 
     bool perdio = false;
 
     int aux;
     int caso;
+    int alternar;
 
     void perderElJuego();
+    void JugadorGanador(int player_);
 
 public slots:
     //void MoveEnemy();

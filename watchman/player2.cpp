@@ -14,7 +14,7 @@ Player2::Player2(QGraphicsItem * parent)
     ancho=125;
     alto=160;
 }
-
+/*
 void Player2::keyPressEvent(QKeyEvent *event)
 {
     qDebug() << "paso del player2";
@@ -59,7 +59,7 @@ void Player2::keyPressEvent(QKeyEvent *event)
     }
     qDebug() << "paso";
 }
-
+*/
 void Player2::Movimiento()
 {
     columna +=130;

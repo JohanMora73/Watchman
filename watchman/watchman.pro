@@ -12,6 +12,7 @@ CONFIG += c++11
 SOURCES += \
     enemy.cpp \
     game.cpp \
+    ganador.cpp \
     main.cpp \
     mainwindow.cpp \
     nave.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     enemy.h \
     game.h \
+    ganador.h \
     mainwindow.h \
     nave.h \
     perder.h \
@@ -35,6 +37,7 @@ HEADERS += \
     vida.h
 
 FORMS += \
+    ganador.ui \
     mainwindow.ui \
     perder.ui
 

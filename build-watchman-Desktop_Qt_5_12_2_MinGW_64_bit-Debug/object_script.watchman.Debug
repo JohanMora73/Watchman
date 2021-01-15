@@ -1,5 +1,6 @@
 debug/enemy.o
 debug/game.o
+debug/ganador.o
 debug/main.o
 debug/mainwindow.o
 debug/nave.o
@@ -12,6 +13,7 @@ debug/vida.o
 debug/qrc_recursos.o
 debug/moc_enemy.o
 debug/moc_game.o
+debug/moc_ganador.o
 debug/moc_mainwindow.o
 debug/moc_nave.o
 debug/moc_perder.o

@@ -23,7 +23,7 @@ public slots:
     void PausarEnemigos();
 
 public:
-    Enemy(int posx_,int posy_);
+    Enemy(int posx_,int posy_,int alternate_);
 
     QPixmap *pixmap;
     QTimer *TimerDesp;
@@ -40,6 +40,8 @@ public:
     float ancho,alto;
     float escala;
 
+    int alternate;
+
     int getPosx() const;
     void setPosx(int px);
     int getPosy() const;
@@ -53,6 +55,7 @@ public:
     void Movimiento();
     void Rebotar(int op);
     void Retroceso(int op);
+    int Colision_enemy();
 
     int posx;
     int posy;
