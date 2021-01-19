@@ -27,6 +27,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    Niveles * nivel;
 
 private slots:
     void on_pushButton_3_clicked(); //Un solo jugador

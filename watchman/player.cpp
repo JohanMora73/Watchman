@@ -27,6 +27,7 @@ void Player::keyPressEvent(QKeyEvent *event)
             setPos(x()-10,y());
             Movimiento();
             fila=340;
+            //if(Colisionar_arbol()==1) setPos(x()+20,y());
         }
     }
 
@@ -35,6 +36,7 @@ void Player::keyPressEvent(QKeyEvent *event)
             setPos(x()+10,y());
             Movimiento();
             fila=5;
+            //if(Colisionar_arbol()==1) setPos(x()-20,y());
         }
     }
 
@@ -43,6 +45,7 @@ void Player::keyPressEvent(QKeyEvent *event)
             setPos(x(),y()-10);
             Movimiento();
             fila=505;
+            //if(Colisionar_arbol()==1) setPos(x(),y()+20);
         }
     }
 
@@ -51,6 +54,7 @@ void Player::keyPressEvent(QKeyEvent *event)
             setPos(x(),y()+10);
             Movimiento();
             fila=172;
+            //if(Colisionar_arbol()==1) setPos(x(),y()-20);
         }
     }
 
@@ -110,6 +114,18 @@ void Player::Movimiento()
     }
     this->update(-ancho/2,-alto/2,ancho,alto);
 
+}
+
+int Player::Colisionar_arbol()
+{
+    int resp=0;
+    QList<QGraphicsItem * >collinding_Items = collidingItems();
+    for(int i = 0; i < collinding_Items.size();i++){
+        if(typeid (*(collinding_Items[i]))==typeid (arbol)){
+           resp=1;
+        }
+    }
+    return resp;
 }
 
 QRectF Player::boundingRect() const

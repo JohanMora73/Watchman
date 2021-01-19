@@ -16,6 +16,11 @@ public:
     ~Ganador();
     int player;
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Ganador *ui;
 };

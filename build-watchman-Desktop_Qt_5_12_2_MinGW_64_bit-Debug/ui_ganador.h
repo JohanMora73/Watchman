@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -26,6 +27,8 @@ public:
     QWidget *centralwidget;
     QGraphicsView *graphicsView;
     QLabel *label;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -51,6 +54,14 @@ public:
         font.setBold(true);
         font.setWeight(75);
         label->setFont(font);
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(90, 120, 161, 41));
+        pushButton->setFont(font);
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(100, 190, 141, 41));
+        pushButton_2->setFont(font);
         Ganador->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Ganador);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -69,6 +80,8 @@ public:
     {
         Ganador->setWindowTitle(QApplication::translate("Ganador", "MainWindow", nullptr));
         label->setText(QApplication::translate("Ganador", "Ganador", nullptr));
+        pushButton->setText(QApplication::translate("Ganador", "Nuevo intento", nullptr));
+        pushButton_2->setText(QApplication::translate("Ganador", "salir", nullptr));
     } // retranslateUi
 
 };

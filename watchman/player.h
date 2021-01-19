@@ -17,6 +17,7 @@ public:
     Player(QGraphicsItem * parent = 0);
     void keyPressEvent(QKeyEvent *event);
     void Movimiento();
+    int Colisionar_arbol();
 
     QTimer *timer;
     QPixmap *pixmap;

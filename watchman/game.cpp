@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(int caso_, QWidget *parent)
+Game::Game(int caso_,int level_, QWidget *parent)
 {
     aux=1;
     scene = new QGraphicsScene();
@@ -9,14 +9,21 @@ Game::Game(int caso_, QWidget *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/nivel1.png")));
+    level=level_;
 
+    if(level==1){
+        Arboles();
+        setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/nivel1.png")));
+        //setForegroundBrush(QBrush(QImage(":/recursos/imagenes/nivel1_fondo3.png")));
+
+    }
+    else if(level==2){
+        setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/escenario2.png")));
+    }
     setFixedSize(1350,700);
 
     show();
     alternar=0;
-
-    //setForegroundBrush(QBrush(QImage(":/recursos/imagenes/fore2.png")));
 
     caso = caso_;
 
@@ -69,8 +76,7 @@ void Game::perderElJuego()
     Time_Enemy->stop();
     perdio=true;
     delete scene;
-
-
+    //this->close();
 }
 
 void Game::JugadorGanador(int player_)
@@ -88,14 +94,35 @@ void Game::JugadorGanador(int player_)
 
 }
 
+void Game::Arboles()
+{
+    a1 = new arbol(1230,270,45,35);
+    scene->addItem(a1);
+
+    a2 = new arbol(1330,605,17,32);
+    scene->addItem(a2);
+
+    a3 = new arbol(742,360,27,25);
+    scene->addItem(a3);
+
+    a4 = new arbol(753,573,18,34);
+    scene->addItem(a4);
+
+    a5 = new arbol(250,260,40,38);
+    scene->addItem(a5);
+
+    a6 = new arbol(34,650,49,41);
+    scene->addItem(a6);
+}
+
 void Game::spawn()
 {
-    //if(aux==1){
+    if(aux==1){
 
     Enemy * enemigo = new Enemy(nave->posx+30,nave->posy+100,alternar);
     scene->addItem(enemigo);  
     if(caso==2) alternar+=1;
-    //AudioInvasores->play();
-    //aux+=1;
-    //}
+    AudioInvasores->play();
+    aux+=1;
+    }
 }

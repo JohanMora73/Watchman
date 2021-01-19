@@ -1,9 +1,11 @@
+release/arbol.o
 release/enemy.o
 release/game.o
 release/ganador.o
 release/main.o
 release/mainwindow.o
 release/nave.o
+release/niveles.o
 release/perder.o
 release/player.o
 release/player2.o
@@ -11,11 +13,13 @@ release/poder.o
 release/puntaje.o
 release/vida.o
 release/qrc_recursos.o
+release/moc_arbol.o
 release/moc_enemy.o
 release/moc_game.o
 release/moc_ganador.o
 release/moc_mainwindow.o
 release/moc_nave.o
+release/moc_niveles.o
 release/moc_perder.o
 release/moc_player.o
 release/moc_player2.o

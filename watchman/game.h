@@ -22,6 +22,8 @@
 #include "puntaje.h"
 #include "perder.h"
 #include "ganador.h"
+#include "niveles.h"
+#include "arbol.h"
 
 
 class Game: public QGraphicsView
@@ -29,7 +31,7 @@ class Game: public QGraphicsView
     Q_OBJECT
 public:
 
-    Game(int caso_,QWidget * parent = nullptr);
+    Game(int caso_,int level_,QWidget * parent = nullptr);
     QGraphicsScene * scene;
     QMediaPlayer * AudioInvasores;// = new QMediaPlayer;
 
@@ -41,15 +43,18 @@ public:
     Perder * lose;
     Player2 * jugador2;
     Ganador * winner;
+    arbol *a1, *a2, *a3 ,*a4, *a5, *a6;
 
     bool perdio = false;
 
     int aux;
     int caso;
     int alternar;
+    int level;
 
     void perderElJuego();
     void JugadorGanador(int player_);
+    void Arboles();
 
 public slots:
     //void MoveEnemy();

@@ -10,12 +10,14 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arbol.cpp \
     enemy.cpp \
     game.cpp \
     ganador.cpp \
     main.cpp \
     mainwindow.cpp \
     nave.cpp \
+    niveles.cpp \
     perder.cpp \
     player.cpp \
     player2.cpp \
@@ -24,11 +26,13 @@ SOURCES += \
     vida.cpp
 
 HEADERS += \
+    arbol.h \
     enemy.h \
     game.h \
     ganador.h \
     mainwindow.h \
     nave.h \
+    niveles.h \
     perder.h \
     player.h \
     player2.h \
@@ -39,6 +43,7 @@ HEADERS += \
 FORMS += \
     ganador.ui \
     mainwindow.ui \
+    niveles.ui \
     perder.ui
 
 # Default rules for deployment.
