@@ -18,9 +18,11 @@ Perder::~Perder()
 
 void Perder::on_pushButton_clicked()
 {
-    //this->hide();
-    juego = new Game(1,1);
-    juego->show();
+
+    juego->close();
+    this->hide();
+    nivel = new Niveles();
+    nivel->show();
     this->close();
 }
 

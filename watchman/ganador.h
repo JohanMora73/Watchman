@@ -2,6 +2,7 @@
 #define GANADOR_H
 
 #include <QMainWindow>
+//#include "mainwindow.h"
 
 namespace Ui {
 class Ganador;

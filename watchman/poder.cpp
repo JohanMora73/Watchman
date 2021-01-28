@@ -36,7 +36,20 @@ void Poder::move()
     else if(caso==5){
         setPos(x()+10,y());
     }
-    if(pos().y() + 50 < 0){
+    //if(pos().y() + 50 < 0){
+    if(y()<-20){
+        scene()->removeItem(this);
+        delete this;
+    }
+    if(y()>720){
+        scene()->removeItem(this);
+        delete this;
+    }
+    if(x()<-20){
+        scene()->removeItem(this);
+        delete this;
+    }
+    if(x()>1370){
         scene()->removeItem(this);
         delete this;
     }

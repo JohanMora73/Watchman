@@ -218,7 +218,7 @@ void Enemy::Rest_Vida_Player()
         if(sqrt(pow(posx-juego->jugador->x(),2)+pow(posy-juego->jugador->y(),2))<=7){
             //qDebug () << " -1 " ;
             juego->Health->decrease();
-            if(juego->Health->getHealth()==0){
+            if(juego->Health->getHealth()<=0){
                 if(juego->caso==2) {juego->JugadorGanador(2);}
                 else {juego->perderElJuego();}
                 //juego->perderElJuego();
@@ -362,6 +362,9 @@ void Enemy::Restar_Vida()
                 scene()->removeItem(this);
                 delete this;
                 juego->score->increase();
+                if(juego->score->getScore()==10){
+                    juego->PasarNivel1();
+                }
             }
         }
     }

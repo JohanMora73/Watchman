@@ -10,16 +10,22 @@ class Nave: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    Nave(QGraphicsItem * parent = 0);
+    Nave(int n_, QGraphicsItem * parent = 0);
 
     QTimer * TimerMove;
+    QTimer *Timepower;
 
     int posx;
     int posy;
+    int n;
 
     int dir;
+    int dir2;
+    int dir3;
+
 public slots:
     void move();
+    void spawn();
 
     //QRectF boundingRect() const;
     //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);

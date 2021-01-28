@@ -14,47 +14,68 @@ Player::Player(QGraphicsItem * parent)
     ancho=125;
     alto=160;
 
-    //Timer_restar = new QTimer();
-    //connect(Timer_restar,SIGNAL(timeout()),this,SLOT(Restar_Vida()));
-    //Timer_restar->start(100);
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
 
     if(event->key()==Qt::Key_A){
-        if(pos().x() > 0){
-            setPos(x()-10,y());
-            Movimiento();
-            fila=340;
-            //if(Colisionar_arbol()==1) setPos(x()+20,y());
+        if(juego->level==1){
+            if(pos().x() > 20){
+                setPos(x()-10,y());
+                Movimiento();
+                fila=340;
+            }
+        }
+        else if(juego->level==2){
+            if(pos().x() > 170){
+                setPos(x()-10,y());
+                Movimiento();
+                fila=340;
+            }
         }
     }
 
     else if(event->key()==Qt::Key_D){
-        if(pos().x() + 50 < 2000){
-            setPos(x()+10,y());
-            Movimiento();
-            fila=5;
-            //if(Colisionar_arbol()==1) setPos(x()-20,y());
+        if(juego->level==1){
+            if(pos().x() < 1320){
+                setPos(x()+10,y());
+                Movimiento();
+                fila=5;
+            }
+        }
+        else if(juego->level==2){
+            if(pos().x() < 1180){
+                setPos(x()+10,y());
+                Movimiento();
+                fila=5;
+            }
         }
     }
 
     else if(event->key()==Qt::Key_W){
-        if(pos().y()>0){
-            setPos(x(),y()-10);
-            Movimiento();
-            fila=505;
-            //if(Colisionar_arbol()==1) setPos(x(),y()+20);
-        }
+            if(pos().y()>150){
+                setPos(x(),y()-10);
+                Movimiento();
+                fila=505;
+            }
+
     }
 
     else if(event->key()==Qt::Key_S){
-        if(pos().y()+50 < 1200){
-            setPos(x(),y()+10);
-            Movimiento();
-            fila=172;
-            //if(Colisionar_arbol()==1) setPos(x(),y()-20);
+        if(juego->level==1){
+            if(pos().y()< 650){
+                setPos(x(),y()+10);
+                Movimiento();
+                fila=172;
+            }
+        }
+        else if(juego->level==2){
+            if(pos().y()< 560){
+                setPos(x(),y()+10);
+                Movimiento();
+                fila=172;
+            }
         }
     }
 
@@ -66,7 +87,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
     if(juego->caso==2){
         if(event->key()==Qt::Key_J){
-            if(juego->jugador2->pos().x() > 0){
+            if(juego->jugador2->x() > 20){
                 juego->jugador2->setPos(juego->jugador2->x()-10,juego->jugador2->y());
                 juego->jugador2->Movimiento();
                 juego->jugador2->fila=340;
@@ -74,7 +95,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
 
         else if(event->key()==Qt::Key_L){
-            if(juego->jugador2->pos().x() + 50 < 2000){
+            if(juego->jugador2->x() < 1320){
                 juego->jugador2->setPos(juego->jugador2->x()+10,juego->jugador2->y());
                 juego->jugador2->Movimiento();
                 juego->jugador2->fila=5;
@@ -82,7 +103,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
 
         else if(event->key()==Qt::Key_I){
-            if(juego->jugador2->pos().y()>0){
+            if(juego->jugador2->y()>150){
                 juego->jugador2->setPos(juego->jugador2->x(),juego->jugador2->y()-10);
                 juego->jugador2->Movimiento();
                 juego->jugador2->fila=505;
@@ -90,7 +111,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         }
 
         else if(event->key()==Qt::Key_K){
-            if(juego->jugador2->pos().y()+50 < 1200){
+            if(juego->jugador2->y()< 650){
                 juego->jugador2->setPos(juego->jugador2->x(),juego->jugador2->y()+10);
                 juego->jugador2->Movimiento();
                 juego->jugador2->fila=172;
@@ -114,18 +135,6 @@ void Player::Movimiento()
     }
     this->update(-ancho/2,-alto/2,ancho,alto);
 
-}
-
-int Player::Colisionar_arbol()
-{
-    int resp=0;
-    QList<QGraphicsItem * >collinding_Items = collidingItems();
-    for(int i = 0; i < collinding_Items.size();i++){
-        if(typeid (*(collinding_Items[i]))==typeid (arbol)){
-           resp=1;
-        }
-    }
-    return resp;
 }
 
 QRectF Player::boundingRect() const

@@ -2,6 +2,7 @@ debug/arbol.o
 debug/enemy.o
 debug/game.o
 debug/ganador.o
+debug/ganar.o
 debug/main.o
 debug/mainwindow.o
 debug/nave.o
@@ -10,6 +11,7 @@ debug/perder.o
 debug/player.o
 debug/player2.o
 debug/poder.o
+debug/poderenemy.o
 debug/puntaje.o
 debug/vida.o
 debug/qrc_recursos.o
@@ -17,6 +19,7 @@ debug/moc_arbol.o
 debug/moc_enemy.o
 debug/moc_game.o
 debug/moc_ganador.o
+debug/moc_ganar.o
 debug/moc_mainwindow.o
 debug/moc_nave.o
 debug/moc_niveles.o
@@ -24,5 +27,6 @@ debug/moc_perder.o
 debug/moc_player.o
 debug/moc_player2.o
 debug/moc_poder.o
+debug/moc_poderenemy.o
 debug/moc_puntaje.o
 debug/moc_vida.o

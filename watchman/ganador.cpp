@@ -1,6 +1,9 @@
 #include "ganador.h"
 #include "ui_ganador.h"
 #include "game.h"
+#include"mainwindow.h"
+#include <QGraphicsScene>
+#include <QGraphicsView>
 
 extern Game *juego;
 
@@ -23,12 +26,21 @@ Ganador::~Ganador()
 
 void Ganador::on_pushButton_clicked()
 {
+    juego->close();
     this->hide();
     juego = new Game(2,1);
     juego->show();
+    this->close();
 }
 
 void Ganador::on_pushButton_2_clicked()
 {
+    juego->close();
+    this->hide();
+    //QApplication a(argc, argv);
+    MainWindow w;
+
+    w.show();
+    this->close();
 
 }

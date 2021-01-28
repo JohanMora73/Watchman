@@ -8,10 +8,18 @@
         <file>recursos/imagenes/poder.png</file>
         <file>recursos/imagenes/escenario2.png</file>
         <file>recursos/imagenes/nave.png</file>
-        <file>recursos/imagenes/nivel1.png</file>
         <file>recursos/imagenes/Mobile - Pocket Mortys - 050 Biker Morty.png</file>
+        <file>recursos/imagenes/nave_princ.png</file>
+        <file>recursos/imagenes/poder_2.png</file>
+        <file>recursos/imagenes/leveltwo.png</file>
+        <file>recursos/imagenes/leveltwo_2.png</file>
+        <file>recursos/imagenes/mapa2.png</file>
+        <file>recursos/imagenes/nivel2.png</file>
+        <file>recursos/imagenes/nave2.png</file>
+        <file>recursos/imagenes/nivel1.png</file>
+        <file>recursos/imagenes/FondoNivel1.png</file>
+        <file>recursos/imagenes/nivel1_fondo3.png</file>
         <file>recursos/imagenes/nivel1_fondo.png</file>
         <file>recursos/imagenes/nivel1_fondo2.png</file>
-        <file>recursos/imagenes/nivel1_fondo3.png</file>
     </qresource>
 </RCC>

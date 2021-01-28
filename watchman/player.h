@@ -20,6 +20,7 @@ public:
     int Colisionar_arbol();
 
     QTimer *timer;
+    QTimer *colision;
     QPixmap *pixmap;
 
     QTimer *Timer_restar;
@@ -30,8 +31,6 @@ public:
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
 
-public slots:
-    //void Restar_Vida();
 
 };
 

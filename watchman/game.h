@@ -23,7 +23,9 @@
 #include "perder.h"
 #include "ganador.h"
 #include "niveles.h"
-#include "arbol.h"
+#include "poderenemy.h"
+#include "ganar.h"
+//#include "arbol.h"
 
 
 class Game: public QGraphicsView
@@ -37,13 +39,16 @@ public:
 
     Player * jugador;
     Nave * nave;
+    Nave *nave2;
+    Nave *nave3;
     Vida * Health;
     Vida * Health2;
     Puntaje * score;
     Perder * lose;
+    ganar * win;
+
     Player2 * jugador2;
     Ganador * winner;
-    arbol *a1, *a2, *a3 ,*a4, *a5, *a6;
 
     bool perdio = false;
 
@@ -51,10 +56,11 @@ public:
     int caso;
     int alternar;
     int level;
+    int time;
 
     void perderElJuego();
     void JugadorGanador(int player_);
-    void Arboles();
+    void PasarNivel1();
 
 public slots:
     //void MoveEnemy();

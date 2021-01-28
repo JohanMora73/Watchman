@@ -12,13 +12,20 @@ Game::Game(int caso_,int level_, QWidget *parent)
     level=level_;
 
     if(level==1){
-        Arboles();
         setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/nivel1.png")));
-        //setForegroundBrush(QBrush(QImage(":/recursos/imagenes/nivel1_fondo3.png")));
+        setForegroundBrush(QBrush(QImage(":/recursos/imagenes/FondoNivel1.png")));
+        time=4000;
 
     }
     else if(level==2){
-        setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/escenario2.png")));
+        setBackgroundBrush(QBrush(QImage(":/recursos/imagenes/nivel2.png")));
+        time=3000;
+
+        nave2 = new Nave(2);
+        scene->addItem(nave2);
+
+        nave3 = new Nave(3);
+        scene->addItem(nave3);
     }
     setFixedSize(1350,700);
 
@@ -52,13 +59,13 @@ Game::Game(int caso_,int level_, QWidget *parent)
     score->setPos(Health->x(),50);
     scene->addItem(score);
 
-    nave = new Nave();
+    nave = new Nave(1);
     //nave->setPos(nave->posx,nave->posy);
     scene->addItem(nave);
 
     Time_Enemy = new QTimer();
     QObject::connect(Time_Enemy,SIGNAL(timeout()),this,SLOT(spawn()));
-    Time_Enemy->start(5000);
+    Time_Enemy->start(time);
 
     AudioInvasores = new QMediaPlayer();
     AudioInvasores->setMedia(QUrl("qrc:/recursos/sonidos/y2matecom-pepinillo-rick-pickle-rick-doblaje-no-oficial-espanol-latino_dBIW7Ztv.mp3"));
@@ -69,12 +76,12 @@ void Game::perderElJuego()
 {
     lose = new Perder();
     lose->show();
+    perdio=true;
     scene->removeItem(jugador);
     delete jugador;
     delete jugador2;
     nave->TimerMove->stop();
     Time_Enemy->stop();
-    perdio=true;
     delete scene;
     //this->close();
 }
@@ -94,35 +101,29 @@ void Game::JugadorGanador(int player_)
 
 }
 
-void Game::Arboles()
+void Game::PasarNivel1()
 {
-    a1 = new arbol(1230,270,45,35);
-    scene->addItem(a1);
+    win = new ganar();
+    win->show();
+    perdio=true;
+    scene->removeItem(jugador);
+    delete jugador;
+    delete jugador2;
+    nave->TimerMove->stop();
+    Time_Enemy->stop();
+    delete scene;
 
-    a2 = new arbol(1330,605,17,32);
-    scene->addItem(a2);
-
-    a3 = new arbol(742,360,27,25);
-    scene->addItem(a3);
-
-    a4 = new arbol(753,573,18,34);
-    scene->addItem(a4);
-
-    a5 = new arbol(250,260,40,38);
-    scene->addItem(a5);
-
-    a6 = new arbol(34,650,49,41);
-    scene->addItem(a6);
 }
 
 void Game::spawn()
 {
-    if(aux==1){
+    //
+    //if(aux==1){
 
     Enemy * enemigo = new Enemy(nave->posx+30,nave->posy+100,alternar);
     scene->addItem(enemigo);  
     if(caso==2) alternar+=1;
     AudioInvasores->play();
-    aux+=1;
-    }
+    //aux+=1;
+    //}
 }

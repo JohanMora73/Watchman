@@ -14,6 +14,7 @@ SOURCES += \
     enemy.cpp \
     game.cpp \
     ganador.cpp \
+    ganar.cpp \
     main.cpp \
     mainwindow.cpp \
     nave.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
     player.cpp \
     player2.cpp \
     poder.cpp \
+    poderenemy.cpp \
     puntaje.cpp \
     vida.cpp
 
@@ -30,6 +32,7 @@ HEADERS += \
     enemy.h \
     game.h \
     ganador.h \
+    ganar.h \
     mainwindow.h \
     nave.h \
     niveles.h \
@@ -37,11 +40,13 @@ HEADERS += \
     player.h \
     player2.h \
     poder.h \
+    poderenemy.h \
     puntaje.h \
     vida.h
 
 FORMS += \
     ganador.ui \
+    ganar.ui \
     mainwindow.ui \
     niveles.ui \
     perder.ui

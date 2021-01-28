@@ -45,9 +45,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>20</x>
       <y>20</y>
-      <width>111</width>
+      <width>341</width>
       <height>51</height>
      </rect>
     </property>
@@ -60,14 +60,14 @@
      </font>
     </property>
     <property name="text">
-     <string>Has perdido</string>
+     <string>Has perdido, la humanidad el juego</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>90</y>
+      <x>200</x>
+      <y>160</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -81,13 +81,13 @@
      </font>
     </property>
     <property name="text">
-     <string>Volver a intentarlo</string>
+     <string>Niveles</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>10</x>
       <y>160</y>
       <width>181</width>
       <height>51</height>
@@ -103,6 +103,27 @@
     </property>
     <property name="text">
      <string>Menu principal</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>321</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>y la humanida su unica esperanza</string>
     </property>
    </widget>
   </widget>

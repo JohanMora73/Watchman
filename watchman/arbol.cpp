@@ -34,22 +34,30 @@ int arbol::colision()
 
 void arbol::Retroceso_Player()
 {
-    if(sqrt(pow((x+ancho/2)-(juego->jugador->x()),2)+pow((y+alto/2)-(juego->jugador->y()),2))<=40){
-    //if(colision()==1){
-
-        if(juego->jugador->fila==172 && juego->jugador->y()>=y-5){
-            juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()-30);
-        }
-        else if(juego->jugador->fila==505 && juego->jugador->y()<=y+alto){
-            juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()+30);
-        }
-
-        if(juego->jugador->fila==5 && juego->jugador->x()>=x-5 && juego->jugador->y()<=y+10){
-            juego->jugador->setPos(juego->jugador->x()-30,juego->jugador->y());
-        }
-        else if(juego->jugador->fila==340 && juego->jugador->x()<=x+ancho && juego->jugador->y()<=y+10){
-            juego->jugador->setPos(juego->jugador->x()+30,juego->jugador->y());
-        }
-
+    if (juego->perdio==true){
+        Timer_retro->stop();
+        scene()->removeItem(this);
+        delete this;
     }
+    else{
+        if(sqrt(pow((x+ancho/2)-(juego->jugador->x()),2)+pow((y+alto/2)-(juego->jugador->y()),2))<=40){
+        //if(colision()==1){
+
+            if(juego->jugador->fila==172 && juego->jugador->y()>=y-5){
+                juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()-30);
+            }
+            else if(juego->jugador->fila==505 && juego->jugador->y()<=y+alto){
+                juego->jugador->setPos(juego->jugador->x(),juego->jugador->y()+30);
+            }
+
+            if(juego->jugador->fila==5 && juego->jugador->x()>=x-5 && juego->jugador->y()<=y+10){
+                juego->jugador->setPos(juego->jugador->x()-30,juego->jugador->y());
+            }
+            else if(juego->jugador->fila==340 && juego->jugador->x()<=x+ancho && juego->jugador->y()<=y+10){
+                juego->jugador->setPos(juego->jugador->x()+30,juego->jugador->y());
+            }
+
+        }
+    }
+
 }

@@ -29,6 +29,7 @@ public:
     QLabel *label;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QLabel *label_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -47,7 +48,7 @@ public:
         graphicsView->setMaximumSize(QSize(400, 260));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(140, 20, 111, 51));
+        label->setGeometry(QRect(20, 20, 341, 51));
         QFont font;
         font.setFamily(QString::fromUtf8("Comic Sans MS"));
         font.setPointSize(14);
@@ -56,12 +57,16 @@ public:
         label->setFont(font);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(110, 90, 181, 51));
+        pushButton->setGeometry(QRect(200, 160, 181, 51));
         pushButton->setFont(font);
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(110, 160, 181, 51));
+        pushButton_2->setGeometry(QRect(10, 160, 181, 51));
         pushButton_2->setFont(font);
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(30, 80, 321, 51));
+        label_2->setFont(font);
         Perder->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Perder);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -79,9 +84,10 @@ public:
     void retranslateUi(QMainWindow *Perder)
     {
         Perder->setWindowTitle(QApplication::translate("Perder", "MainWindow", nullptr));
-        label->setText(QApplication::translate("Perder", "Has perdido", nullptr));
-        pushButton->setText(QApplication::translate("Perder", "Volver a intentarlo", nullptr));
+        label->setText(QApplication::translate("Perder", "Has perdido, la humanidad el juego", nullptr));
+        pushButton->setText(QApplication::translate("Perder", "Niveles", nullptr));
         pushButton_2->setText(QApplication::translate("Perder", "Menu principal", nullptr));
+        label_2->setText(QApplication::translate("Perder", "y la humanida su unica esperanza", nullptr));
     } // retranslateUi
 
 };
