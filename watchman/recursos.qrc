@@ -21,5 +21,6 @@
         <file>recursos/imagenes/nivel1_fondo3.png</file>
         <file>recursos/imagenes/nivel1_fondo.png</file>
         <file>recursos/imagenes/nivel1_fondo2.png</file>
+        <file>recursos/imagenes/portada.png</file>
     </qresource>
 </RCC>

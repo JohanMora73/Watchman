@@ -1,8 +1,8 @@
-release/arbol.o
 release/enemy.o
 release/game.o
 release/ganador.o
 release/ganar.o
+release/ganar2.o
 release/main.o
 release/mainwindow.o
 release/nave.o
@@ -12,14 +12,16 @@ release/player.o
 release/player2.o
 release/poder.o
 release/poderenemy.o
+release/principal.o
 release/puntaje.o
+release/usuarios.o
 release/vida.o
 release/qrc_recursos.o
-release/moc_arbol.o
 release/moc_enemy.o
 release/moc_game.o
 release/moc_ganador.o
 release/moc_ganar.o
+release/moc_ganar2.o
 release/moc_mainwindow.o
 release/moc_nave.o
 release/moc_niveles.o
@@ -28,5 +30,6 @@ release/moc_player.o
 release/moc_player2.o
 release/moc_poder.o
 release/moc_poderenemy.o
+release/moc_principal.o
 release/moc_puntaje.o
 release/moc_vida.o

@@ -2,7 +2,7 @@
 #define GANAR_H
 
 #include <QMainWindow>
-#include <niveles.h>
+#include "niveles.h"
 
 namespace Ui {
 class ganar;

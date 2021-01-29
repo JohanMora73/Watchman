@@ -10,11 +10,11 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    arbol.cpp \
     enemy.cpp \
     game.cpp \
     ganador.cpp \
     ganar.cpp \
+    ganar2.cpp \
     main.cpp \
     mainwindow.cpp \
     nave.cpp \
@@ -24,15 +24,17 @@ SOURCES += \
     player2.cpp \
     poder.cpp \
     poderenemy.cpp \
+    principal.cpp \
     puntaje.cpp \
+    usuarios.cpp \
     vida.cpp
 
 HEADERS += \
-    arbol.h \
     enemy.h \
     game.h \
     ganador.h \
     ganar.h \
+    ganar2.h \
     mainwindow.h \
     nave.h \
     niveles.h \
@@ -41,15 +43,18 @@ HEADERS += \
     player2.h \
     poder.h \
     poderenemy.h \
+    principal.h \
     puntaje.h \
+    usuarios.h \
     vida.h
 
 FORMS += \
     ganador.ui \
     ganar.ui \
-    mainwindow.ui \
+    ganar2.ui \
     niveles.ui \
-    perder.ui
+    perder.ui \
+    principal.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

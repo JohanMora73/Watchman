@@ -51,7 +51,7 @@ public:
         graphicsView->setMaximumSize(QSize(400, 300));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 20, 331, 51));
+        label->setGeometry(QRect(30, 40, 331, 31));
         QFont font;
         font.setFamily(QString::fromUtf8("Comic Sans MS"));
         font.setPointSize(14);

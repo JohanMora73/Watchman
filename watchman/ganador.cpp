@@ -1,7 +1,7 @@
 #include "ganador.h"
 #include "ui_ganador.h"
 #include "game.h"
-#include"mainwindow.h"
+#include "principal.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
@@ -37,10 +37,6 @@ void Ganador::on_pushButton_2_clicked()
 {
     juego->close();
     this->hide();
-    //QApplication a(argc, argv);
-    MainWindow w;
-
-    w.show();
-    this->close();
-
+    Principal * MenuPrincipal=new Principal();
+    MenuPrincipal->show();
 }

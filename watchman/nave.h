@@ -26,9 +26,6 @@ public:
 public slots:
     void move();
     void spawn();
-
-    //QRectF boundingRect() const;
-    //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
 };
 
 #endif // NAVE_H

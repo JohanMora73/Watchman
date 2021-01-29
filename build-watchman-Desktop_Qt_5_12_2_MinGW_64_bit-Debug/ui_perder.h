@@ -48,7 +48,7 @@ public:
         graphicsView->setMaximumSize(QSize(400, 260));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 20, 341, 51));
+        label->setGeometry(QRect(70, 30, 241, 51));
         QFont font;
         font.setFamily(QString::fromUtf8("Comic Sans MS"));
         font.setPointSize(14);
@@ -84,7 +84,7 @@ public:
     void retranslateUi(QMainWindow *Perder)
     {
         Perder->setWindowTitle(QApplication::translate("Perder", "MainWindow", nullptr));
-        label->setText(QApplication::translate("Perder", "Has perdido, la humanidad el juego", nullptr));
+        label->setText(QApplication::translate("Perder", "Has perdido esta batalla", nullptr));
         pushButton->setText(QApplication::translate("Perder", "Niveles", nullptr));
         pushButton_2->setText(QApplication::translate("Perder", "Menu principal", nullptr));
         label_2->setText(QApplication::translate("Perder", "y la humanida su unica esperanza", nullptr));

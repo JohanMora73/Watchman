@@ -25,8 +25,7 @@
 #include "niveles.h"
 #include "poderenemy.h"
 #include "ganar.h"
-//#include "arbol.h"
-
+#include "ganar2.h"
 
 class Game: public QGraphicsView
 {
@@ -44,11 +43,8 @@ public:
     Vida * Health;
     Vida * Health2;
     Puntaje * score;
-    Perder * lose;
-    ganar * win;
 
     Player2 * jugador2;
-    Ganador * winner;
 
     bool perdio = false;
 
@@ -61,6 +57,7 @@ public:
     void perderElJuego();
     void JugadorGanador(int player_);
     void PasarNivel1();
+    void PasarNivel2();
 
 public slots:
     //void MoveEnemy();

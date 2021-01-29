@@ -2,7 +2,7 @@
 
 Vida::Vida(QGraphicsItem *parent): QGraphicsTextItem(parent)
 {
-    health = 5;
+    health = 20;
     setPlainText(QString("health: ") + QString::number(health));
     setDefaultTextColor(Qt::black);
     setFont(QFont("times",16));

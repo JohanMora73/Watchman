@@ -363,7 +363,12 @@ void Enemy::Restar_Vida()
                 delete this;
                 juego->score->increase();
                 if(juego->score->getScore()==10){
-                    juego->PasarNivel1();
+                    if(juego->level==1){
+                        juego->PasarNivel1();
+                    }
+                    else if(juego->level==2){
+                        juego->PasarNivel2();
+                    }
                 }
             }
         }

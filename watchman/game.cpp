@@ -74,45 +74,37 @@ Game::Game(int caso_,int level_, QWidget *parent)
 
 void Game::perderElJuego()
 {
-    lose = new Perder();
+    Perder * lose = new Perder();
     lose->show();
     perdio=true;
-    scene->removeItem(jugador);
-    delete jugador;
-    delete jugador2;
-    nave->TimerMove->stop();
     Time_Enemy->stop();
-    delete scene;
-    //this->close();
 }
 
 void Game::JugadorGanador(int player_)
 {
-    winner = new Ganador(player_);
+    Ganador * winner = new Ganador(player_);
     winner->show();
-    scene->removeItem(jugador);
-    scene->removeItem(jugador2);
-    delete jugador;
-    delete jugador2;
-    nave->TimerMove->stop();
-    Time_Enemy->stop();
     perdio=true;
-    delete scene;
+    Time_Enemy->stop();
+
 
 }
 
 void Game::PasarNivel1()
 {
-    win = new ganar();
+    ganar * win = new ganar();
     win->show();
     perdio=true;
-    scene->removeItem(jugador);
-    delete jugador;
-    delete jugador2;
-    nave->TimerMove->stop();
     Time_Enemy->stop();
-    delete scene;
 
+}
+
+void Game::PasarNivel2()
+{
+    ganar2 * win = new ganar2();
+    win->show();
+    perdio=true;
+    Time_Enemy->stop();
 }
 
 void Game::spawn()

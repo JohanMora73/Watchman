@@ -1,6 +1,7 @@
 #include "perder.h"
 #include "ui_perder.h"
 #include "game.h"
+#include "principal.h"
 
 extern Game *juego;
 
@@ -28,5 +29,8 @@ void Perder::on_pushButton_clicked()
 
 void Perder::on_pushButton_2_clicked()
 {
-
+    juego->close();
+    this->hide();
+    Principal * MenuPrincipal=new Principal();
+    MenuPrincipal->show();
 }
